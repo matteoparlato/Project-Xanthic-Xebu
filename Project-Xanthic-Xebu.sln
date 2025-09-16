@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36429.23 d17.14
+VisualStudioVersion = 17.14.36429.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project-Xanthic-Xebu.AppHost", "Project-Xanthic-Xebu.AppHost\Project-Xanthic-Xebu.AppHost.csproj", "{DDF0C335-9971-462D-9251-8E633320BC97}"
 EndProject
@@ -9,8 +9,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project-Xanthic-Xebu.ApiService", "Project-Xanthic-Xebu.ApiService\Project-Xanthic-Xebu.ApiService.csproj", "{62282627-2FBB-32F7-EEC5-A4040432ADEA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project-Xanthic-Xebu.Web", "Project-Xanthic-Xebu.Web\Project-Xanthic-Xebu.Web.csproj", "{93B43E99-2FE4-0178-9A48-D01623EB1231}"
-EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Project-Xanthic-Xebu-Device", "Project-Xanthic-Xebu-Device\Project-Xanthic-Xebu-Device.pyproj", "{DC881BEC-D53C-4F4F-B16A-00D8B2D728D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,5 +1,6 @@
 using MongoDB.Bson;
 using MongoDB.Driver;
+using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,7 +28,23 @@ if (app.Environment.IsDevelopment())
 
 string[] summaries = ["Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"];
 
-app.MapGet("/postForecast", async (HttpRequest request) =>
+app.MapGet("/weatherforecast", () =>
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var mongoClient = scope.ServiceProvider.GetRequiredService<IMongoClient>();
+
+        var database = mongoClient.GetDatabase("mongodb");
+        var collection = database.GetCollection<WeatherForecast>("WeatherForecasts");
+
+        var forecasts = collection.Find(_ => true).ToList();
+
+        return Results.Ok(forecasts); // Will return as JSON
+    }
+})
+.WithName("GetWeatherForecast");
+
+app.MapPost("/postForecast", async (HttpRequest request) =>
 {
 
     using var reader = new StreamReader(request.Body);
@@ -40,33 +57,16 @@ app.MapGet("/postForecast", async (HttpRequest request) =>
         var database = mongoClient.GetDatabase("mongodb");
         var collection = database.GetCollection<WeatherForecast>("WeatherForecasts");
 
-        // Check if data exists
-        var count = collection.CountDocuments(new BsonDocument());
-
-        if (count == 0)
+        collection.InsertOne(new WeatherForecast
         {
-            var weatherForecasts = new List<WeatherForecast>();
-
-            foreach (var index in Enumerable.Range(1, 5))
-            {
-                var date = DateOnly.FromDateTime(DateTime.Now.AddDays(index));
-                var temperatureC = Random.Shared.Next(-20, 55);
-                var summary = summaries[Random.Shared.Next(summaries.Length)];
-
-                weatherForecasts.Add(new WeatherForecast
-                {
-                    Id = Guid.NewGuid().ToString(),
-                    Date = date,
-                    TemperatureC = temperatureC,
-                    Summary = summary
-                });
-            }
-
-            collection.InsertMany(weatherForecasts);
-        }
+            Id = Guid.NewGuid().ToString(),
+            Date = DateOnly.FromDateTime(DateTime.Now.AddDays(1)),
+            TemperatureC = Random.Shared.Next(-20, 55),
+            Summary = summaries[Random.Shared.Next(summaries.Length)]
+        });
     }
 })
-.WithName("GetWeatherForecast");
+.WithName("PostForecast");
 
 app.MapDefaultEndpoints();
 

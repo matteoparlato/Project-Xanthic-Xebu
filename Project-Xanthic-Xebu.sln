@@ -1,0 +1,46 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36429.23 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project-Xanthic-Xebu.AppHost", "Project-Xanthic-Xebu.AppHost\Project-Xanthic-Xebu.AppHost.csproj", "{DDF0C335-9971-462D-9251-8E633320BC97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project-Xanthic-Xebu.ServiceDefaults", "Project-Xanthic-Xebu.ServiceDefaults\Project-Xanthic-Xebu.ServiceDefaults.csproj", "{792A4CB9-F343-4A80-F88F-641919C645A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project-Xanthic-Xebu.ApiService", "Project-Xanthic-Xebu.ApiService\Project-Xanthic-Xebu.ApiService.csproj", "{62282627-2FBB-32F7-EEC5-A4040432ADEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project-Xanthic-Xebu.Web", "Project-Xanthic-Xebu.Web\Project-Xanthic-Xebu.Web.csproj", "{93B43E99-2FE4-0178-9A48-D01623EB1231}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Project-Xanthic-Xebu-Device", "Project-Xanthic-Xebu-Device\Project-Xanthic-Xebu-Device.pyproj", "{DC881BEC-D53C-4F4F-B16A-00D8B2D728D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDF0C335-9971-462D-9251-8E633320BC97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDF0C335-9971-462D-9251-8E633320BC97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDF0C335-9971-462D-9251-8E633320BC97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDF0C335-9971-462D-9251-8E633320BC97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{792A4CB9-F343-4A80-F88F-641919C645A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{792A4CB9-F343-4A80-F88F-641919C645A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{792A4CB9-F343-4A80-F88F-641919C645A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{792A4CB9-F343-4A80-F88F-641919C645A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62282627-2FBB-32F7-EEC5-A4040432ADEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62282627-2FBB-32F7-EEC5-A4040432ADEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62282627-2FBB-32F7-EEC5-A4040432ADEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62282627-2FBB-32F7-EEC5-A4040432ADEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93B43E99-2FE4-0178-9A48-D01623EB1231}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93B43E99-2FE4-0178-9A48-D01623EB1231}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93B43E99-2FE4-0178-9A48-D01623EB1231}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93B43E99-2FE4-0178-9A48-D01623EB1231}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC881BEC-D53C-4F4F-B16A-00D8B2D728D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC881BEC-D53C-4F4F-B16A-00D8B2D728D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C43CE128-D13F-42B5-B592-C12B3E6CBEC4}
+	EndGlobalSection
+EndGlobal

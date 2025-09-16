@@ -21,7 +21,9 @@ builder.AddProject<Projects.Project_Xanthic_Xebu_Web>("webfrontend")
     .WaitFor(mongodb);
 
 #pragma warning disable ASPIREHOSTINGPYTHON001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
-var pythonapp = builder.AddPythonApp("device1", "../Project-Xanthic-Xebu-Device", "main.py");
+var pythonapp = builder.AddPythonApp("device1", "../Project-Xanthic-Xebu-Device", "main.py")
+       .WithHttpEndpoint(env: "PORT")
+       .WithExternalHttpEndpoints();
 #pragma warning restore ASPIREHOSTINGPYTHON001
 
 builder.Build().Run();

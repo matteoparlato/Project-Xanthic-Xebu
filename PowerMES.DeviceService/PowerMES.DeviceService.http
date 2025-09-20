@@ -1,0 +1,6 @@
+@PowerMES.DeviceService_HostAddress = http://localhost:5262
+
+GET {{PowerMES.DeviceService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

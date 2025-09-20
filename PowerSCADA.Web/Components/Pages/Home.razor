@@ -1,0 +1,37 @@
+﻿@page "/"
+@using PowerDF.Core.Models
+@using PowerSCADA.Services
+@inject IRabbitMQService RabbitMQService
+
+<PageTitle>Device Status</PageTitle>
+
+<h1>Device Status</h1>
+
+<p>This component demonstrates showing broadcasted data from a device.</p>
+
+<p>
+    Alarm is running: @CurrentAlarm.IsRunning
+</p>
+
+@code {
+    public Alarm CurrentAlarm { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            await RabbitMQService.SubscribeToAlarmsAsync(OnAlarmReceivedAsync);
+        }
+        catch (Exception ex)
+        {
+            // TODO: Handle error
+            Console.WriteLine($"Error subscribing to alarms: {ex.Message}");
+        }
+    }
+
+    private async Task OnAlarmReceivedAsync(Alarm alarm)
+    {
+        CurrentAlarm = alarm;
+        await InvokeAsync(StateHasChanged); // Update UI on the correct thread
+    }
+}

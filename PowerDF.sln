@@ -18,6 +18,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerDF.AppHost", "PowerDF.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerDF.ServiceDefaults", "PowerDF.ServiceDefaults\PowerDF.ServiceDefaults.csproj", "{99FCE34C-6A62-4317-BF0B-2895F9E36821}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerMES.Swagger", "PowerMES.Swagger\PowerMES.Swagger.csproj", "{B5CE038D-E457-47EA-2E5E-C8752E5B96A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerPMM.Swagger", "PowerPMM.Swagger\PowerPMM.Swagger.csproj", "{3B571B81-1273-471E-0B09-A2B19F62B289}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +58,14 @@ Global
 		{99FCE34C-6A62-4317-BF0B-2895F9E36821}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99FCE34C-6A62-4317-BF0B-2895F9E36821}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99FCE34C-6A62-4317-BF0B-2895F9E36821}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5CE038D-E457-47EA-2E5E-C8752E5B96A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5CE038D-E457-47EA-2E5E-C8752E5B96A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5CE038D-E457-47EA-2E5E-C8752E5B96A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5CE038D-E457-47EA-2E5E-C8752E5B96A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B571B81-1273-471E-0B09-A2B19F62B289}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B571B81-1273-471E-0B09-A2B19F62B289}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B571B81-1273-471E-0B09-A2B19F62B289}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B571B81-1273-471E-0B09-A2B19F62B289}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

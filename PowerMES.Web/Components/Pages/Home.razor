@@ -1,7 +1,55 @@
 ﻿@page "/"
+@using BlazorBootstrap;
+@using IO.Swagger.Api
+@using IO.Swagger.Model
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<main>
+    <div class="modal modal-sheet position-static d-block bg-dark p-4 py-md-5" tabindex="-1" role="dialog" id="modalTour">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content rounded-4 shadow">
+                <div class="modal-body p-5">
+                    <h2 class="fw-bold mb-8">Power MES</h2>
+                    <Grid TItem="InlineResponseDefaultValue"
+                          Class="table table-hover table-bordered table-striped"
+                          DataProvider="CompaniesDataProvider"
+                          AllowRowClick="true"
+                          OnRowClick="OnRowClick"
+                          Responsive="true">
 
-Welcome to your new app.
+                        <GridColumns>
+                            <GridColumn TItem="InlineResponseDefaultValue" HeaderText="Name" PropertyName="DisplayName" SortKeySelector="item => item.DisplayName">
+                                @context.DisplayName
+                            </GridColumn>
+                        </GridColumns>
+                    </Grid>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+@code {
+    [Inject]
+    private IDefaultApi DefaultApi { get; set; }
+
+    [Inject]
+    private NavigationManager NavigationManager { get; set; }
+
+    private List<InlineResponseDefaultValue> companies;
+
+    private async Task<GridDataProviderResult<InlineResponseDefaultValue>> CompaniesDataProvider(GridDataProviderRequest<InlineResponseDefaultValue> request)
+    {
+        InlineResponseDefault inlineResponseDefault = await DefaultApi.GetCompaniesAsync();
+        companies = inlineResponseDefault.Value;
+
+        return await Task.FromResult(request.ApplyTo(companies));
+    }
+
+    private async void OnRowClick(GridRowEventArgs<InlineResponseDefaultValue> args)
+    {
+        // await ProtectedSessionStorage.SetAsync("selectedCompany", args.Item);
+        // NavigationManager.NavigateTo($"/panels");
+    }
+}

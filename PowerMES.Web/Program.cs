@@ -1,3 +1,5 @@
+using IO.Swagger.Api;
+using IO.Swagger.Client;
 using PowerMES.Web.Components;
 
 namespace PowerMES.Web;
@@ -8,9 +10,22 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
+        builder.Services.AddScoped<IDefaultApi>(x =>
+        {
+            var apiConfig = builder.Configuration.GetSection("API");
+            return new DefaultApi(new Configuration()
+            {
+                BasePath = builder.Configuration.GetValue<string>("powermes-web-hostname"),
+                Username = builder.Configuration.GetValue<string>("powermes-web-username"),
+                Password = builder.Configuration.GetValue<string>("powermes-web-password")
+            });
+        });
+
         // Add services to the container.
         builder.Services.AddRazorComponents()
             .AddInteractiveServerComponents();
+
+        builder.Services.AddBlazorBootstrap();
 
         var app = builder.Build();
 

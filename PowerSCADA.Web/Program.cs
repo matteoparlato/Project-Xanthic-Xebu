@@ -15,6 +15,8 @@ public class Program
         builder.Services.AddRazorComponents()
             .AddInteractiveServerComponents();
 
+        builder.Services.AddBlazorBootstrap();
+
         builder.Services.AddSingleton<IRabbitMQService, RabbitMQService>();
 
         var app = builder.Build();
